@@ -10,6 +10,12 @@ public class Array {
 
     public void insert(int item) {
         items[size++] = item;
+        if (items.length == size) {
+            int[] temp = new int[size * 2];
+            for (int i = 0; i < size; i++)
+                temp[i] = items[i];
+            items = temp;
+        }
     }
 
     public void removeAt(int index) {

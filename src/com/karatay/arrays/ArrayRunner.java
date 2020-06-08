@@ -7,6 +7,9 @@ public class ArrayRunner {
         items.insert(20);
         items.insert(30);
         items.insert(40);
+        items.insert(50);
+        items.insert(60);
+        items.insert(70);
 
         // number.removeAt(3);
         // System.out.println("index of" + number.indexOf(2));
