@@ -6,14 +6,11 @@ public class ArrayRunner {
         items.insert(10);
         items.insert(20);
         items.insert(30);
-        items.insert(40);
-        items.insert(50);
-        items.insert(60);
-        items.insert(70);
 
-        // number.removeAt(3);
         items.print();
-        System.out.println("index of 40: " + items.indexOf(40));
+        items.removeAt(2);
+        items.print();
+        //System.out.println("index of 40: " + items.indexOf(40));
 
     }
 }

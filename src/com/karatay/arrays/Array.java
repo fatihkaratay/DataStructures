@@ -19,7 +19,12 @@ public class Array {
     }
 
     public void removeAt(int index) {
+        if (index < 0 || index >= size)
+            throw new IllegalArgumentException();
 
+        for (int i = index; i < size; i++)
+            items[i] = items[i + 1];
+        size--;
     }
 
     public int indexOf(int index) {
