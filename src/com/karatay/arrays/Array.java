@@ -27,8 +27,14 @@ public class Array {
         size--;
     }
 
-    public int indexOf(int index) {
-        return -1;
+    public int indexOf(int item) {
+        int value = -1;
+
+        for (int i = 0; i < size; i++)
+            if (items[i] == item)
+                value = i;
+
+        return value;
     }
 
     public void print() {
