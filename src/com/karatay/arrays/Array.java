@@ -9,7 +9,7 @@ public class Array {
     }
 
     public void insert(int item) {
-
+        items[size++] = item;
     }
 
     public void removeAt(int index) {
