@@ -12,8 +12,8 @@ public class ArrayRunner {
         items.insert(70);
 
         // number.removeAt(3);
-        // System.out.println("index of" + number.indexOf(2));
         items.print();
+        System.out.println("index of 40: " + items.indexOf(40));
 
     }
 }
