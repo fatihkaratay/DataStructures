@@ -10,7 +10,7 @@ public class Array {
 
     public void print() {
         for (int i = 0; i < count; i++)
-            System.out.println(items[i]);
+            System.out.print(items[i] + ", ");
     }
 
     public void insert(int item) {
@@ -38,6 +38,35 @@ public class Array {
             if (items[i] == item)
                 return i;
         return -1;
+    }
+
+    public int max() {
+        int max = count > 0 ? items[0] : 0;
+        for (int i = 0; i < count; i++)
+            max = Math.max(max, items[i]);
+        return max;
+    }
+
+    public void reverse() {
+        for (int i = count-1; i >= 0; i--)
+            System.out.print(items[i] + ", ");
+    }
+
+    public void insertAt(int index, int item) {
+        if (index < 0 || index >= count)
+            throw new IllegalArgumentException();
+
+        int[] new_arr = new int[items.length + 1];
+
+        for (int i = 0; i < index; i++)
+            new_arr[i] = items[i];
+
+        new_arr[index] = item;
+
+        for (int i = index + 1; i <= items.length; i++)
+            new_arr[i] = items[i - 1];
+
+        items = new_arr;
     }
 
 }
