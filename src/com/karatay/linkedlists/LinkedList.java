@@ -173,7 +173,21 @@ public class LinkedList {
     /*
     Check to see if a linked list has a loop
     */
-    public boolean hasLoop() {
+    public boolean hasCycle() {
+        if (first == null) {
+            return false;
+        }
+
+        Node fast = first.next;
+        Node slow = first;
+        while (fast != null && fast.next != null && slow != null) {
+            if (fast.value == slow.value) {
+                return true;
+            }
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
         return false;
     }
 
