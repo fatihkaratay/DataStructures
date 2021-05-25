@@ -6,6 +6,8 @@ public class LinkedList {
     private Node first; // head node
     private Node last; // tail node
 
+    private int size = 0;
+
     public void addLast(int item) {
         Node node = new Node(item);
 
@@ -15,6 +17,8 @@ public class LinkedList {
             last.next = node;
             last = node;
         }
+
+        size++;
     }
 
     public void addFirst(int item) {
@@ -26,6 +30,8 @@ public class LinkedList {
             node.next = first;
             first = node;
         }
+
+        size++;
     }
 
     public int indexOf(int item) {
@@ -57,6 +63,8 @@ public class LinkedList {
         Node second = first.next;
         first.next = null;
         first = second;
+
+        size--;
     }
 
     public void removeLast() {
@@ -71,6 +79,8 @@ public class LinkedList {
         Node previousNode = getPreviousNode(last);
         last = previousNode;
         last.next = null;
+
+        size--;
     }
 
     private Node getPreviousNode(Node node) {
@@ -80,6 +90,10 @@ public class LinkedList {
                 return node;
         }
         return null;
+    }
+
+    public int size() {
+        return size;
     }
 
     private boolean isEmpty() {
