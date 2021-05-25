@@ -7,7 +7,7 @@ public class LinkedList {
     public void addLast(int item) {
         Node node = new Node(item);
 
-        if (first == null)
+        if (isEmpty())
             first = last = node;
         else {
             last.next = node;
@@ -15,16 +15,19 @@ public class LinkedList {
         }
     }
 
-    // addFirst
     public void addFirst(int item) {
         Node node = new Node(item);
 
-        if (first == null)
+        if (isEmpty())
             first = last = node;
         else {
             node.next = first;
             first = node;
         }
+    }
+
+    private boolean isEmpty() {
+        return first == null;
     }
     // deleteFirst
     // deleteLast
