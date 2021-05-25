@@ -123,6 +123,31 @@ public class LinkedList {
         first = previous;
     }
 
+    // Finding the kth node from the end of a linked list in one pass
+    // assume that we do not know the size
+    public int getKthFromEnd(int k) {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        Node a = first;
+        Node b = first;
+
+        for (int i = 0; i < k - 1; i++) {
+            b = b.next;
+            if (b == null) {
+                throw new IllegalArgumentException();
+            }
+        }
+
+        while (b != null) {
+            a = a.next;
+            b = b.next;
+        }
+
+        return a.value;
+    }
+
+
     private boolean isEmpty() {
         return first == null;
     }
