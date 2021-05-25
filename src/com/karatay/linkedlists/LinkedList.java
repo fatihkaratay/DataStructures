@@ -147,7 +147,24 @@ public class LinkedList {
         return a.value;
     }
 
+    /*
+     Find the middle of a linked list in one pass.
+     If the list has an even number of nodes, there would be two middle nodes.
+     (Note: Assume that you don’t know the size of the list ahead of time.)
+    */
+    public int printMiddle() {
+        return 0;
+    }
 
+    /*
+    Check to see if a linked list has a loop
+    */
+    public boolean hasLoop() {
+        return false;
+    }
+
+
+    // helper methods
     private boolean isEmpty() {
         return first == null;
     }
