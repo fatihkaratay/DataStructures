@@ -59,6 +59,26 @@ public class LinkedList {
         first = second;
     }
 
+    public void removeLast() {
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+
+        Node currentNode = first;
+        while (currentNode != null) {
+            if (currentNode.next == last)
+                break;
+            currentNode = currentNode.next;
+        }
+
+        last = currentNode;
+        last.next = null;
+    }
+
     private boolean isEmpty() {
         return first == null;
     }
