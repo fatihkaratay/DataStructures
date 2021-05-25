@@ -1,5 +1,7 @@
 package com.karatay.linkedlists;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
     private Node first; // head node
     private Node last; // tail node
@@ -41,6 +43,20 @@ public class LinkedList {
 
     public  boolean contains(int item) {
         return indexOf(item) != -1;
+    }
+
+    public void removeFirst() {
+        if (isEmpty())
+            throw new NoSuchElementException();
+
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+
+        Node second = first.next;
+        first.next = null;
+        first = second;
     }
 
     private boolean isEmpty() {
