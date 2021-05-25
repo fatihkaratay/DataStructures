@@ -68,23 +68,23 @@ public class LinkedList {
             return;
         }
 
-        Node currentNode = first;
-        while (currentNode != null) {
-            if (currentNode.next == last)
-                break;
-            currentNode = currentNode.next;
-        }
-
-        last = currentNode;
+        Node previousNode = getPreviousNode(last);
+        last = previousNode;
         last.next = null;
+    }
+
+    private Node getPreviousNode(Node node) {
+        Node current = first;
+        while (current != null) {
+            if (current.next == node)
+                return node;
+        }
+        return null;
     }
 
     private boolean isEmpty() {
         return first == null;
     }
-    // deleteFirst
-    // deleteLast
-    // contains
-    // indexOf
+
     // size
 }
