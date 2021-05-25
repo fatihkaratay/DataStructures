@@ -108,6 +108,21 @@ public class LinkedList {
         return arr;
     }
 
+    public void reverse() {
+        Node previous = first;
+        Node current = first.next;
+        while (current != null) {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+
     private boolean isEmpty() {
         return first == null;
     }
