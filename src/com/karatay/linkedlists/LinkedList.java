@@ -57,13 +57,11 @@ public class LinkedList {
 
         if (first == last) {
             first = last = null;
-            return;
+        } else {
+            Node second = first.next;
+            first.next = null;
+            first = second;
         }
-
-        Node second = first.next;
-        first.next = null;
-        first = second;
-
         size--;
     }
 
@@ -73,12 +71,11 @@ public class LinkedList {
 
         if (first == last) {
             first = last = null;
-            return;
+        } else {
+            Node previousNode = getPreviousNode(last);
+            last = previousNode;
+            last.next = null;
         }
-
-        Node previousNode = getPreviousNode(last);
-        last = previousNode;
-        last.next = null;
 
         size--;
     }
