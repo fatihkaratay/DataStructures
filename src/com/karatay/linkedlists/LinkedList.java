@@ -152,8 +152,22 @@ public class LinkedList {
      If the list has an even number of nodes, there would be two middle nodes.
      (Note: Assume that you don’t know the size of the list ahead of time.)
     */
-    public int printMiddle() {
-        return 0;
+    public void printMiddle() {
+        if (first == null)
+            throw new IllegalStateException();
+
+        Node a = first;
+        Node b = first;
+        while (b != last && b.next != last) {
+            b = b.next.next;
+            a = a.next;
+        }
+
+        if (b == last) {                    // if odd numbers of nodes
+            System.out.println(a.value);
+        } else {                            // if even numbers of nodes
+            System.out.println(a.value + " and " + a.next.value);
+        }
     }
 
     /*
