@@ -7,9 +7,9 @@ public class LinkedListRunner {
         list.addLast(20);
         list.addLast(30);
 
-        System.out.println(list.indexOf(10));
-        System.out.println(list.indexOf(20));
-        System.out.println(list.indexOf(30));
-        System.out.println(list.indexOf(40));
+        System.out.println(list.contains(10));
+        System.out.println(list.contains(20));
+        System.out.println(list.contains(30));
+        System.out.println(list.contains(40));
     }
 }
