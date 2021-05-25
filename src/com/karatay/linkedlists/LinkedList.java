@@ -83,8 +83,10 @@ public class LinkedList {
     private Node getPreviousNode(Node node) {
         Node current = first;
         while (current != null) {
-            if (current.next == node)
+            if (current.next == node) {
                 return node;
+            }
+            current = current.next;
         }
         return null;
     }
