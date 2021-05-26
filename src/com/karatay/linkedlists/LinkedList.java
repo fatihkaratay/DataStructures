@@ -191,6 +191,23 @@ public class LinkedList {
         return false;
     }
 
+    /*
+    Adding a node to the specific position
+    */
+    public void insertNodeAtPosition(int position, Node node) {
+        if (first == null) {
+            return;
+        }
+
+        Node pointer = first;
+        for (int i = 1; i <= position; i++) {
+            pointer = pointer.next;
+        }
+
+        node.next = pointer.next;
+        pointer = node;
+    }
+
 
     // helper methods
     private boolean isEmpty() {
