@@ -20,4 +20,31 @@ public class StackExercises {
         }
         return sb.toString();
     }
+
+    public boolean isBalanced(String str) {
+        if (str == null) {
+            throw new IllegalArgumentException();
+        }
+
+        Stack<Character> stack = new Stack<>();
+        for (char ch : str.toCharArray()) {
+            if (ch == '(' || ch == '<' || ch == '[' || ch == '{') {
+                stack.push(ch);
+            }
+            if (ch == ')' || ch == '>' || ch == ']' || ch == '}'){
+                if (stack.empty()) return false;
+                char top = stack.pop();
+                if (
+                        (ch == ')' && top != '(') ||
+                        (ch == '>' && top != '<') ||
+                        (ch == ']' && top != '[') ||
+                        (ch == '}' && top != '{')
+                ) {
+                    return false;
+                }
+            }
+        }
+
+        return stack.empty();
+    }
 }
