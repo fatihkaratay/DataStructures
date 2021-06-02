@@ -1,9 +1,16 @@
 package com.karatay.stacks;
 
+import com.karatay.arrays.Array;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class StackExercises {
-    // 1- reverse a string
+    private final List<Character> leftBrackets = Arrays.asList('(', '<', '[', '{');
+    private final List<Character> rightBrackets = Arrays.asList(')','>', ']', '}');
+
+    // 1- Reverse a string
     public String reverse(String str) {
         if (str == null || str.length() == 0) {
             throw new IllegalArgumentException();
@@ -21,6 +28,7 @@ public class StackExercises {
         return sb.toString();
     }
 
+    // 2- Balance a string
     public boolean isBalanced(String str) {
         if (str == null) {
             throw new IllegalArgumentException();
@@ -33,8 +41,9 @@ public class StackExercises {
             }
             if (isRightBracket(ch)){
                 if (stack.empty()) return false;
+
                 char top = stack.pop();
-                if (bracketsMatch(top, ch)) return false;
+                if (!bracketsMatch(top, ch)) return false;
             }
         }
 
@@ -42,15 +51,12 @@ public class StackExercises {
     }
 
     private boolean isLeftBracket(char ch) {
-        return ch == '(' || ch == '<' || ch == '[' || ch == '{';
+        return leftBrackets.contains(ch);
     }
     private boolean isRightBracket(char ch) {
-        return ch == ')' || ch == '>' || ch == ']' || ch == '}';
+        return rightBrackets.contains((ch));
     }
     private boolean bracketsMatch(char left, char right) {
-        return (right == ')' && left != '(') ||
-                (right == '>' && left != '<') ||
-                (right == ']' && left != '[') ||
-                (right == '}' && left != '{');
+        return leftBrackets.indexOf(left) == rightBrackets.indexOf(right);
     }
 }
