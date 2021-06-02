@@ -28,23 +28,29 @@ public class StackExercises {
 
         Stack<Character> stack = new Stack<>();
         for (char ch : str.toCharArray()) {
-            if (ch == '(' || ch == '<' || ch == '[' || ch == '{') {
+            if (isLeftBracket(ch)) {
                 stack.push(ch);
             }
-            if (ch == ')' || ch == '>' || ch == ']' || ch == '}'){
+            if (isRightBracket(ch)){
                 if (stack.empty()) return false;
                 char top = stack.pop();
-                if (
-                        (ch == ')' && top != '(') ||
-                        (ch == '>' && top != '<') ||
-                        (ch == ']' && top != '[') ||
-                        (ch == '}' && top != '{')
-                ) {
-                    return false;
-                }
+                if (bracketsMatch(top, ch)) return false;
             }
         }
 
         return stack.empty();
+    }
+
+    private boolean isLeftBracket(char ch) {
+        return ch == '(' || ch == '<' || ch == '[' || ch == '{';
+    }
+    private boolean isRightBracket(char ch) {
+        return ch == ')' || ch == '>' || ch == ']' || ch == '}';
+    }
+    private boolean bracketsMatch(char left, char right) {
+        return (right == ')' && left != '(') ||
+                (right == '>' && left != '<') ||
+                (right == ']' && left != '[') ||
+                (right == '}' && left != '{');
     }
 }
