@@ -1,8 +1,7 @@
 package com.karatay.hashmaps;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.nio.charset.IllegalCharsetNameException;
+import java.util.*;
 
 public class HashMapExcercises {
     // 1-Find first non repeated character.
@@ -21,6 +20,21 @@ public class HashMapExcercises {
         for (char ch : chars)
             if (map.get(ch) == 1)
                 return ch;
+
+        return Character.MIN_VALUE;
+    }
+
+    // 2-Find first repeated character.
+    public char getFirstRepeated(String str) {
+        str = formatStr(str);
+        Set<Character> seen = new HashSet<>();
+
+        for (char ch : str.toCharArray()) {
+            if (seen.contains(ch))
+                return ch;
+
+            seen.add(ch);
+        }
 
         return Character.MIN_VALUE;
     }
