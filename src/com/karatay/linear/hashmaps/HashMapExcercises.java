@@ -1,4 +1,4 @@
-package com.karatay.hashmaps;
+package com.karatay.linear.hashmaps;
 
 import java.nio.charset.IllegalCharsetNameException;
 import java.util.*;

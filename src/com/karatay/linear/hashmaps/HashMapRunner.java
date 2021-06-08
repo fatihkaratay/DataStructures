@@ -1,8 +1,4 @@
-package com.karatay.hashmaps;
-
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+package com.karatay.linear.hashmaps;
 
 public class HashMapRunner {
     public static void main(String[] args) {

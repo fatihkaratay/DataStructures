@@ -1,6 +1,4 @@
-package com.karatay.stacks;
-
-import com.karatay.arrays.Array;
+package com.karatay.linear.stacks;
 
 import java.util.Arrays;
 import java.util.List;

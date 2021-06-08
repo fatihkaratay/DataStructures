@@ -1,6 +1,4 @@
-package com.karatay.stacks;
-
-import java.util.Stack;
+package com.karatay.linear.stacks;
 
 public class StackRunner {
     public static void main(String[] args) {

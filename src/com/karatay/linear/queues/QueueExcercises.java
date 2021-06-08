@@ -1,4 +1,4 @@
-package com.karatay.queues;
+package com.karatay.linear.queues;
 
 import java.util.Queue;
 import java.util.Stack;

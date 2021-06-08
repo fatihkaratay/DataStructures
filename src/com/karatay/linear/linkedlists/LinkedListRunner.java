@@ -1,4 +1,4 @@
-package com.karatay.linkedlists;
+package com.karatay.linear.linkedlists;
 
 import java.util.Arrays;
 

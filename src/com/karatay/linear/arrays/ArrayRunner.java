@@ -1,4 +1,4 @@
-package com.karatay.arrays;
+package com.karatay.linear.arrays;
 
 public class ArrayRunner {
     public static void main(String[] args) {
